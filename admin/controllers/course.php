@@ -8,6 +8,7 @@
  */
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+use Joomla\CMS\Log\Log;
 
 /**
  * HelloWorld Controller
@@ -21,21 +22,27 @@ class AcademicsControllerCourse extends JControllerForm
     //
     protected $path = JPATH_ROOT.'/downloads/programmes';
 
-    public function save($key = NULL, $urlVar = NULL)
-     {
-        //create a folder first
+   public function save($key = NULL, $urlVar = NULL)
+   {
+      # Check is the location of folder exists
+      if(!JFolder::exists($this->path))
+      {
+         # Create one
+         JFolder::create($path, 0755);
+         JFactory::getApplication()->enqueueMessage(JText::_('New folder: '. $this->path . " created!" ), 'success');
+      } 
+      
+      else
+      {
+         # Run code if the folder location already exis
+         JFactory::getApplication()->enqueueMessage(JText::_('Files will be uploaded to: '. $this->path . "!" ), 'info');
+      }
 
-        if(!JFolder::exists($this->path))
-        {
-           //create one
-           //JFolder::create($path, 0755);
-           JFactory::getApplication()->enqueueMessage(JText::_('Folder: '. $this->path . " created." ), 'info');
-        }
-
-
-        
+      # Get the application input
       $jinput = JFactory::getApplication()->input;
+      # Get the file itself from the request
       $file = $jinput->files->get("jform");
+
       // Import filesystem libraries. Perhaps not necessary, but does not hurt.
       jimport('joomla.filesystem.file');
 
@@ -55,12 +62,11 @@ class AcademicsControllerCourse extends JControllerForm
 
       // Set up the source and destination of the file
       $src = $file['document']['tmp_name'];
-      
+
+      # Strip any spaces in between and replace with underscore
       $dest = $this->path.'/'. preg_replace( '/\s+/', '_', $filename);
 
       //check if file already exists
-      
-
       if (JFile::upload($src, $dest))
       {
          // Redirect to a page of your choice.
@@ -81,7 +87,7 @@ class AcademicsControllerCourse extends JControllerForm
         //return parent::save('id', $urlVar);
         JFactory::getApplication()->enqueueMessage(JText::_('An error occurred. Please try again later.' ), 'error');
         return false;
-     }
+   }
 
 
 }
