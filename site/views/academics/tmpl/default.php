@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 
 <section class="mt-4 mb-2">    
     <!-- Secition Into-->
-    <div class="mt-2 mb-1 p-2">
+    <div class="mt-2 mb-1 p-2" style="border-left:#999 solid 3px;">
         <p class="text-justified" title="Study at KeSRA">We are delighted that you are planning to advance your knowledge in Tax and Customs administration through our comprehensive programmes in Tax and Customs Laws and procedures across the East African Region</p>
     </div>
     <!-- /.Secition Intro -->
@@ -38,7 +38,7 @@ defined('_JEXEC') or die('Restricted access');
                 ?>
                 
                 <div class="p-2 mt-4 mb-2">
-                    <small><?php echo $p->title;?></small>
+                    <small><strong><?php echo $p->title;?></strong></small>
                 </div>
 
                 <?php
@@ -48,11 +48,11 @@ defined('_JEXEC') or die('Restricted access');
 
                             ?>
                             
-                            <div class=" d-flex my-2 py-1 px-1 justify-content-between flex-wrap align-items-center border"  style="border-left:#ff0613 solid 3px;" title="<?php echo $c->title;?>">
+                            <div class=" d-flex my-3 py-1 px-1 justify-content-between flex-wrap align-items-center"  style="border-left:#ff0613 solid 3px;" title="<?php echo $c->title;?>">
                                 <!-- Course-->
                                 <div class=" py-1 px-2 m-1" style="width:400px;" >
                                 <?php
-                                echo $i. ' . ' .$c->title;
+                                echo $c->title;
                                 $class = "";
                                 $show = '';
                                 if($i == 0){
@@ -68,25 +68,67 @@ defined('_JEXEC') or die('Restricted access');
 
                                 ?>
                                 <br>
-                                <a data-toggle="collapse"   role="button" aria-expanded="false" aria-controls="pcourse-<?php echo $c->id;?>" href="#pcourse-<?php echo $c->id;?>" class="py-2"><small>See More Details</small></a>
+                                <a data-toggle="collapse" style="color:#ff0613;" class="btn btn-sm btn-link m-1"  role="button" aria-expanded="false" aria-controls="pcourse-<?php echo $c->id;?>" href="#pcourse-<?php echo $c->id;?>" class="py-2"><small> view requirements </small></a>
+        
+                        
                                 </div>
 
 
                                 <div class="p-2 m-1">
-                                    <a   class="btn btn-primary btn-sm" style="" href="#"> APPLY NOW</a>
+                                <a   class="btn btn-primary m-1 btn-sm" style="" href="#"> APPLY NOW</a>
                                 </div>
                                 <!-- ./ Course-->
                             </div>
 
-                            <div class="collapse my-1 py-2 px-1" id="pcourse-<?php echo $c->id;?>" data-parent="#paccordion" >
+                            <div class="collapse" id="pcourse-<?php echo $c->id;?>" data-parent="#paccordion" >
                                 <div class="m-1 p-2">
                                 <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active " id="nav-course-<?php echo $c->id;?>-tab" data-toggle="tab" href="#nav-course-<?php echo $c->id;?>" role="tab" aria-controls="nav-course" aria-selected="true">Requirements</a>
                                     <a class="nav-item nav-link" id="nav-apply-<?php echo $c->id;?>-tab" data-toggle="tab" href="#nav-apply-<?php echo $c->id;?>" role="tab" aria-controls="nav-apply" aria-selected="true">How To Apply</a>
+                                    
                                 </div>
                                 </nav>
-                                <div class="tab-content bg-light border-bottom" id="nav-tabContent">
+                                <div class="tab-content bg-light border-bottom
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                " id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-course-<?php echo $c->id;?>" role="tabpanel" aria-labelledby="nav-course-<?php echo $c->id;?>-tab">
                                     <p class="p-2">
                                         <?php
