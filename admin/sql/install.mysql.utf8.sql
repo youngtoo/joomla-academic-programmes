@@ -20,12 +20,10 @@ CREATE TABLE `kesra__courses` (
     `programme_id` int(11), 
 	`title` VARCHAR(250) ,
     `description` VARCHAR(1000) NOT NULL,
-
 	`document` VARCHAR(1000),
 	`duration` INT(10),
 	`studymode` VARCHAR(1000) NOT NULL,
 	`campus` VARCHAR(1000) NOT NULL,
-
 	`published` tinyint(4) NOT NULL DEFAULT '1',
     `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`)

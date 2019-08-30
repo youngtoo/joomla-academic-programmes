@@ -24,20 +24,7 @@ class AcademicsControllerCourse extends JControllerForm
 
    public function save($key = NULL, $urlVar = NULL)
    {
-      # Check is the location of folder exists
-      if(!JFolder::exists($this->path))
-      {
-         # Create one
-         JFolder::create($path, 0755);
-         JFactory::getApplication()->enqueueMessage(JText::_('New folder: '. $this->path . " created!" ), 'success');
-      } 
       
-      else
-      {
-         # Run code if the folder location already exis
-         JFactory::getApplication()->enqueueMessage(JText::_('Files will be uploaded to: '. $this->path . "!" ), 'info');
-      }
-
       # Get the application input
       $jinput = JFactory::getApplication()->input;
       # Get the file itself from the request
@@ -65,15 +52,30 @@ class AcademicsControllerCourse extends JControllerForm
 
       # Strip any spaces in between and replace with underscore
       $dest = $this->path.'/'. preg_replace( '/\s+/', '_', $filename);
+      #
+      
+      # Check is the location of folder exists
+      if(!JFolder::exists($this->path))
+      {
+         # Create one
+         JFolder::create($path, 0755);
+         JFactory::getApplication()->enqueueMessage(JText::_('New folder: '. $this->path . " created!" ), 'success');
+      } 
+      
+      else
+      {
+         # Run code if the folder location already exis
+         JFactory::getApplication()->enqueueMessage(JText::_('Files will be uploaded to: '. $this->path . "!" ), 'info');
+      }
 
       //check if file already exists
       if (JFile::upload($src, $dest))
       {
          // Redirect to a page of your choice.
           JFactory::getApplication()->enqueueMessage(JText::_('File uploaded successfully to: '.$dest ), 'success');
-         //$url['url'] = $dest;
-         //return parent::save('id', $urlVar['url']);
+         $document['name'] = $dest;
          return parent::save($key, $urlVar);
+         //return parent::save('document', $dest);
 
       } 
       else

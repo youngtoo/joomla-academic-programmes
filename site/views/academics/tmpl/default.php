@@ -48,7 +48,7 @@ defined('_JEXEC') or die('Restricted access');
 
                             ?>
                             
-                            <div class=" d-flex my-3 py-1 px-1 justify-content-between flex-wrap align-items-center"  style="border-left:#ff0613 solid 3px;" title="<?php echo $c->title;?>">
+                            <div class=" d-flex my-3 py-1 px-1 justify-content-between flex-wrap align-items-center"  style="border-left:#ff0613 solid 3px; border-right:#ff0613 solid 3px;" title="<?php echo $c->title;?>">
                                 <!-- Course-->
                                 <div class=" py-1 px-2 m-1" style="width:400px;" >
                                 <?php
@@ -75,7 +75,7 @@ defined('_JEXEC') or die('Restricted access');
 
 
                                 <div class="p-2 m-1">
-                                <a   class="btn btn-primary m-1 btn-sm" style="" href="#"> APPLY NOW</a>
+                                <a   class="btn btn-primary m-1 btn-sm" style="" href="<?php echo $c->document;?>" download> APPLY NOW <small></small></a>
                                 </div>
                                 <!-- ./ Course-->
                             </div>
@@ -89,52 +89,18 @@ defined('_JEXEC') or die('Restricted access');
                                     
                                 </div>
                                 </nav>
-                                <div class="tab-content bg-light border-bottom
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                " id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-course-<?php echo $c->id;?>" role="tabpanel" aria-labelledby="nav-course-<?php echo $c->id;?>-tab">
-                                    <p class="p-2">
+                                <div class="tab-content bg-light border-bottom " id="nav-tabContent">
+                                <div class="tab-pane fade show active p-2" id="nav-course-<?php echo $c->id;?>" role="tabpanel" aria-labelledby="nav-course-<?php echo $c->id;?>-tab">
+                                    <p class="">
+                                    <p class=""><small>Overview</small></p>
                                         <?php
                                         echo $c->description;
                                         ?>
                                     </p>
+
+                                    <p class=""><small>Duration</small></p>
+                                    
+                                    <div class=""><?php echo $c->duration;?></div>
                                 </div>
 
                                 <div class="tab-pane fade " id="nav-apply-<?php echo $c->id;?>" role="tabpanel" aria-labelledby="nav-apply-<?php echo $c->id;?>-tab">
@@ -143,7 +109,7 @@ defined('_JEXEC') or die('Restricted access');
                                     To apply:
 
                                                 <ul>
-                                                <li>Download the Application form by clicking on the Apply button.</li>
+                                                <li><a href="<?php echo $c->document;?>" download >Download</a> the Application form by clicking on the Apply button.</li>
                                                 <li>Fill and submit the application form at Times Tower 8th Floor or KESRA Centre Westlands.</li>
                                                 </ul>
                                         

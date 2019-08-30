@@ -17,13 +17,7 @@
 			description="Define the course title" 
 			size="10" />
 
-        <field 	
-			name="description" 
-			required="true" 
-			type="textarea" 
-			default="" 
-			label="Course Descripiton" 
-			description="" rows="10" cols="5" />
+       
 		
 		<field
 			name="programme_id"
@@ -38,7 +32,7 @@
 			<option value="">Please select your option</option>
 		</field>
 
-		<field name="studymode" type="list" default="" required="true" label="Study mode" description="">
+		<field name="studymode" type="combo" default="" required="true" label="Study mode" description="">
 			<option value="">Please Select</option>
 			<option value="day">Day</option>
 			<option value="evening">Evening</option>
@@ -46,10 +40,8 @@
 			<option value="weekend">Weekend</option>
 		</field>
 		
-		<field name="duration" type="list" default="" required="true" label="Duration" description="">
-			<option value="">Please Select</option>
-			<option value="1 month"> 1 Month</option>
-			<option value="2 months"> 2 Months</option>
+		<field name="duration" default=""  type="combo" required="true" label="Duration" description="">
+			<option value="Unspecified">Please Select</option>
 			<option value="6 months"> 6 Months</option>
 			<option value="1 year">1 Year</option>
 			<option value="2 years">2 Years</option>
@@ -63,12 +55,17 @@
 			<option value="ecampus">eCampus</option>
 		</field>
 
-
+		 <field 	
+			name="description" 
+			type="editor" 
+			height="250px" 
+			label="Course Descripiton"  />
 
 		<field 
 			name="document" 
 			type="file" 
-			label="Upload a PDF" 
+			default=""
+			label="Upload an application form" 
 			description="Choose an PDF file from your computer with maximum 10MB" 
 			size="10" accept=".pdf , .docx , .doc, .txt" />
 

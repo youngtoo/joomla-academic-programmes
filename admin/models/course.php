@@ -85,4 +85,11 @@ class AcademicsModelCourse extends JModelAdmin
 
 		return $data;
 	}
+
+	protected function prepareTable($form)
+	{
+		$jinput = JFactory::getApplication()->input;
+      	$files = $jinput->files->get("jform");
+		$form->document = 'downloads/programmes/'. preg_replace( '/\s+/', '_',$files['document']['name']);
+	}
 }
