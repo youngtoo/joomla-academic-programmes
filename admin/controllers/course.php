@@ -36,12 +36,12 @@ class AcademicsControllerCourse extends JControllerForm
       /**
        * Check file
        */
-      /*
+      
       if($file['document']['name'] == null && $file['document']['size'] == 0){
          JFactory::getApplication()->enqueueMessage(JText::_('Please upload a file.' ), 'error');
          return false;
       }
-      */
+      
 
       // Clean up filename to get rid of strange characters like spaces etc.
       $filename = JFile::makeSafe($file['document']['name']);
@@ -81,8 +81,8 @@ class AcademicsControllerCourse extends JControllerForm
       else
       {
          // Redirect and throw an error message.
-         JFactory::getApplication()->enqueueMessage(JText::_('An error occurred. Please try again later.' ), 'error');
-         return false;
+         JFactory::getApplication()->enqueueMessage(JText::_('File already exists: '. $dest ), 'info');
+         return parent::save($key, $urlVar);
       }
         		
         //JFactory::getApplication()->enqueueMessage(JText::_('Normal save happened'), 'info');

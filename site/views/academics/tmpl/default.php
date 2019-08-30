@@ -38,7 +38,7 @@ defined('_JEXEC') or die('Restricted access');
                 ?>
                 
                 <div class="p-2 mt-4 mb-2">
-                    <small><strong><?php echo $p->title;?></strong></small>
+                    <strong><?php echo $p->title;?></strong>
                 </div>
 
                 <?php
@@ -68,7 +68,7 @@ defined('_JEXEC') or die('Restricted access');
 
                                 ?>
                                 <br>
-                                <a data-toggle="collapse" style="color:#ff0613;" class="btn btn-sm btn-link m-1"  role="button" aria-expanded="false" aria-controls="pcourse-<?php echo $c->id;?>" href="#pcourse-<?php echo $c->id;?>" class="py-2"><small> view requirements </small></a>
+                                <a data-toggle="collapse" style="color:#ff0613;" class="btn btn-sm btn-link m-1"  role="button" aria-expanded="false" aria-controls="pcourse-<?php echo $c->id;?>" href="#pcourse-<?php echo $c->id;?>"><small> view requirements </small></a>
         
                         
                                 </div>
@@ -81,7 +81,7 @@ defined('_JEXEC') or die('Restricted access');
                             </div>
 
                             <div class="collapse" id="pcourse-<?php echo $c->id;?>" data-parent="#paccordion" >
-                                <div class="m-1 p-2">
+                                <div class="m-1 p-2 bg-light">
                                 <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active " id="nav-course-<?php echo $c->id;?>-tab" data-toggle="tab" href="#nav-course-<?php echo $c->id;?>" role="tab" aria-controls="nav-course" aria-selected="true">Requirements</a>
@@ -89,7 +89,7 @@ defined('_JEXEC') or die('Restricted access');
                                     
                                 </div>
                                 </nav>
-                                <div class="tab-content bg-light border-bottom " id="nav-tabContent">
+                                <div class="tab-content  border-bottom " id="nav-tabContent">
                                 <div class="tab-pane fade show active p-2" id="nav-course-<?php echo $c->id;?>" role="tabpanel" aria-labelledby="nav-course-<?php echo $c->id;?>-tab">
                                     <p class="">
                                     <p class=""><small>Overview</small></p>
@@ -101,6 +101,10 @@ defined('_JEXEC') or die('Restricted access');
                                     <p class=""><small>Duration</small></p>
                                     
                                     <div class=""><?php echo $c->duration;?></div>
+
+                                    <p class=""><small>Mode of Study</small></p>
+                                    
+                                    <div class=""><?php echo $c->studymode;?></div>
                                 </div>
 
                                 <div class="tab-pane fade " id="nav-apply-<?php echo $c->id;?>" role="tabpanel" aria-labelledby="nav-apply-<?php echo $c->id;?>-tab">

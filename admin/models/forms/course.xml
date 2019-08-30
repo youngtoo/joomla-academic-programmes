@@ -54,12 +54,25 @@
 			<option value="mombasa">Mombasa Campus</option>
 			<option value="ecampus">eCampus</option>
 		</field>
-
-		 <field 	
+		
+		<field 
 			name="description" 
-			type="editor"  
-			buttons="false"
-			label="Course Descripiton"  />
+			type="textarea" 
+			default="" 
+			label="Course overview" 
+			description="" 
+			rows="10" 
+			cols="5" />
+		
+		<field 
+			name="eligibility" 
+			type="textarea" 
+			default="" 
+			label="Eligibility for Enrollment" 
+			description="" 
+			rows="10" 
+			cols="5" />
+
 
 		<field 
 			name="document" 

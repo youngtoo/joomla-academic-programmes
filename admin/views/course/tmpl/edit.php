@@ -29,7 +29,7 @@ defined('_JEXEC') or die('Restricted Access');
                 <fieldset class="adminform">
                     <legend><?php echo JText::_('Course details'); ?></legend>
                     <div class="row-fluid">
-                        <div class="span12">
+                        <div class="span8">
                             <?php foreach ($this->form->getFieldset() as $field): ?>
                                 <div class="control-group">
                                     <div class="control-label"><?php echo $field->label; ?></div>
