@@ -48,11 +48,13 @@
 		</field>
 
 
-		<field name="campus" type="list" default="" required="true" label="Select an option" description="">
-			<option value="">Please Select</option>
-			<option value="nairobi">Nairobi Campus</option>
-			<option value="mombasa">Mombasa Campus</option>
+		<field name="campus" type="combo" default="" required="true" label="Select Campus" description="" hint="You can also type">
+			<option value="Unspecified">Please Select</option>
+			<option value="Nairobi Campus">Nairobi Campus</option>
+			<option value="Mombasa Campus">Mombasa Campus</option>
 			<option value="ecampus">eCampus</option>
+			<option value="Nairobi #&amp; Mombasa Campus">Nairobi #&amp; Mombasa Campus</option>
+			<option value="Nairobi, Mombasa  #&amp; e-Campus">Nairobi, Mombasa #&amp; e-Campus</option>
 		</field>
 		
 		<field 

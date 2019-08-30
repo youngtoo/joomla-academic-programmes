@@ -68,7 +68,7 @@ defined('_JEXEC') or die('Restricted access');
 
                                 ?>
                                 <br>
-                                <a data-toggle="collapse" style="color:#ff0613;" class="btn btn-sm btn-link m-1"  role="button" aria-expanded="false" aria-controls="pcourse-<?php echo $c->id;?>" href="#pcourse-<?php echo $c->id;?>"><small> view requirements </small></a>
+                                <a data-toggle="collapse" style="color:#ff0613;" class="mt-1"  role="button" aria-expanded="false" aria-controls="pcourse-<?php echo $c->id;?>" href="#pcourse-<?php echo $c->id;?>"><small> View requirements </small></a>
         
                         
                                 </div>
@@ -85,6 +85,7 @@ defined('_JEXEC') or die('Restricted access');
                                 <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active " id="nav-course-<?php echo $c->id;?>-tab" data-toggle="tab" href="#nav-course-<?php echo $c->id;?>" role="tab" aria-controls="nav-course" aria-selected="true">Requirements</a>
+                                    <a class="nav-item nav-link" id="nav-eligibility-<?php echo $c->id;?>-tab" data-toggle="tab" href="#nav-eligibility-<?php echo $c->id;?>" role="tab" aria-controls="nav-apply" aria-selected="true">Eligibility</a>
                                     <a class="nav-item nav-link" id="nav-apply-<?php echo $c->id;?>-tab" data-toggle="tab" href="#nav-apply-<?php echo $c->id;?>" role="tab" aria-controls="nav-apply" aria-selected="true">How To Apply</a>
                                     
                                 </div>
@@ -98,13 +99,21 @@ defined('_JEXEC') or die('Restricted access');
                                         ?>
                                     </p>
 
-                                    <p class=""><small>Duration</small></p>
+                                    <p class=" mb-0"><small> Duration</small></p>
                                     
-                                    <div class=""><?php echo $c->duration;?></div>
+                                    <div class=""> <i class="fa fa-clock p-1"></i> <?php echo $c->duration;?></div>
 
                                     <p class=""><small>Mode of Study</small></p>
                                     
-                                    <div class=""><?php echo $c->studymode;?></div>
+                                    <div class=""><i class="fa fa-book-open p-1"></i> <?php echo $c->studymode;?></div>
+                                </div>
+
+                                <div class="tab-pane fade " id="nav-eligibility-<?php echo $c->id;?>" role="tabpanel" aria-labelledby="nav-apply-<?php echo $c->id;?>-tab">
+                                    <p class="p-2">
+
+                                    <?php echo $c->eligibility;?>
+                                        
+                                    </p>
                                 </div>
 
                                 <div class="tab-pane fade " id="nav-apply-<?php echo $c->id;?>" role="tabpanel" aria-labelledby="nav-apply-<?php echo $c->id;?>-tab">

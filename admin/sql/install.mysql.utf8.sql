@@ -23,7 +23,7 @@ CREATE TABLE `kesra__courses` (
 	`eligibility` TEXT,
 	`document` VARCHAR(1000),
 	`requirements` VARCHAR(1000),
-	`duration` VARCHAR(1000),
+	`duration` TEXT,
 	`studymode` VARCHAR(1000) NOT NULL,
 	`campus` VARCHAR(1000) NOT NULL,
 	`published` tinyint(4) NOT NULL DEFAULT '1',
