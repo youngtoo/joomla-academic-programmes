@@ -67,6 +67,7 @@
 		<field name="document" 
 			type="filelist" 
 			label="Upload a PDF" 
+			directory="images/programmes"
 			description="Choose an PDF file from your computer with maximum 10MB" 
 			stripext="false" />
 
